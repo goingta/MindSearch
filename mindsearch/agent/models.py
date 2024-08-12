@@ -58,3 +58,15 @@ qwen = dict(type=GPTAPI,
             max_new_tokens=4096,
             repetition_penalty=1.02,
             stop_words=['<|im_end|>'])
+
+
+medgpt = dict(type=GPTAPI,
+              model_type='MedGPT',
+              openai_api_base = os.environ.get('MEDGPT_HOST', 'YOUR MEDGPT HOST'),
+              stop_words=['<|im_end|>','<|endoftext|>']
+            )
+
+glm4 = dict(type=GPTAPI,
+              model_type='glm-4',
+              openai_api_base = 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+              key=os.environ.get('GLM_API_KEY', 'YOUR OPENAI API KEY'))
